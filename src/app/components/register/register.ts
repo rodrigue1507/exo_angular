@@ -31,7 +31,7 @@ export class RegisterComponent {
         console.log("valide")
         // TODO utiliser registrationService pour ajouter un nouvel utilisateur
         // TODO utiliser this.router.navigate pour rediriger l'utilisateur vers la page de login
-        this.router.navigate['/login']
+        this.router.navigate(['/login']);
         
     }
 }

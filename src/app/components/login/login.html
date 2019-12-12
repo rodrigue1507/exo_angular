@@ -1,11 +1,11 @@
 <h2>Login</h2>
 <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-  <nz-form-item>
+  <nz-form-item [ngClass]="{ 'has-error': f.submitted && !username.valid }">
     <label for="username">Username</label>
     <!-- TODO data-binding -->
     <input type="text" nz-input name="username" #username="ngModel" [(ngModel)]="model.username" />
   </nz-form-item>
-  <nz-form-item>
+  <nz-form-item [ngClass]="{ 'has-error': f.submitted && !password.valid }">
     <label for="password">Mot de Passe</label>
     <!-- TODO data-binding -->
     <input type="password" nz-input name="password" #password="ngModel"  [(ngModel)]="model.password" />

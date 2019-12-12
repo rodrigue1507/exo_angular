@@ -9,7 +9,7 @@
     <label for="pictureUrl">URL de la photo</label>
     <input type="pictureUrl" nz-input name="pictureUrl" [(ngModel)]="model.pictureUrl" #pictureUrl="ngModel" />
   </nz-form-item>
-  <nz-form-item [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+  <nz-form-item [ngClass]="{ 'has-error': f.submitted && !password.valid }">
     <label for="password">Mot de Passe</label>
     <input type="password" nz-input name="password" [(ngModel)]="model.password" #password="ngModel" required/>
     <nz-form-explain *ngIf="f.submitted && !password.valid" class="help-block">mot de passe requis</nz-form-explain>
