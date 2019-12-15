@@ -22,6 +22,7 @@ export class SocialAppComponent implements OnInit {
 
     async ngOnInit() {
         // utiliser le channelService pour récupérer la liste
+        this.channels =  await this.channelService.getAll();
         // this.route.firstChild.params permet de connaître les paramètre de l'url
     }
 }

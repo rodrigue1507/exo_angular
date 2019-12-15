@@ -1,7 +1,11 @@
-<nav>
+<nav class="navbar bg-light">
   <add-channel></add-channel>
   <!-- TODO itérer sur les channels -->
-  <a [routerLink]=""></a>
+  <ul  class="navbar-nav" *ngFor="let item of channels">
+    <li class="nav-item">
+      <a [routerLink]="" routerLinkActive="active" >{{item}}</a>
+    </li>
+  </ul>
 </nav>
 
 <style >

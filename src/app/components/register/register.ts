@@ -15,7 +15,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 export class RegisterComponent {
     @ViewChild(NgForm, { static: false })
     ngForm: NgForm;
-
+    isExist = false; // à mettre dans la vue
     model = new UserRegistration();
 
     constructor(
@@ -27,11 +27,13 @@ export class RegisterComponent {
     register() {
         if (this.ngForm.form.invalid) {
             return;
+        };
+        if(!this.registrationService.usernameExists(this.model.username)){
+            return this.isExist = true;
         }
-        console.log("valide")
         // TODO utiliser registrationService pour ajouter un nouvel utilisateur
+        this.registrationService.register(this.model);
         // TODO utiliser this.router.navigate pour rediriger l'utilisateur vers la page de login
-        this.router.navigate(['/login']);
-        
+        this.router.navigate(['/login']); 
     }
 }
