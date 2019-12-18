@@ -12,6 +12,7 @@ import { PostService, PostSocketService, LoggedUser, MessageParser } from 'servi
 export class PostComponent { 
     @Input() post: Post;
     
+    
     constructor(
         private postSocket: PostSocketService, 
         private user: LoggedUser,
@@ -20,13 +21,13 @@ export class PostComponent {
     ) {}
 
     ngOnInit() {
+        console.log(this.post);
         // détermine le bon type de contenu
         this.post.content = this.parser.parse(this.post);
     }
 
-
-
     onComment(message: string) {
         // TODO envoyer le message
+
     }
 }

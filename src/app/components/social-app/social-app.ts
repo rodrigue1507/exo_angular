@@ -25,4 +25,6 @@ export class SocialAppComponent implements OnInit {
         this.channels =  await this.channelService.getAll();
         // this.route.firstChild.params permet de connaître les paramètre de l'url
     }
+    
+    
 }
