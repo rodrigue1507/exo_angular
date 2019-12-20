@@ -34,6 +34,7 @@ export class AddChannelComponent {
             // TODO ajouter le nouveau channel
             await this.channelService.add(this.model.name);
             this.hide();
+            location.reload();
         }
     }
 }

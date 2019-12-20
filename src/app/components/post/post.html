@@ -8,7 +8,7 @@
     {{post.user.username}}
     <div class="date">
       <!-- afficher la date avec le pipe date -->
-
+      {{post.creationTime | date:"dd/MM/yyyy"}}
     </div>
   </div>
   <div class="right">
@@ -33,8 +33,10 @@
 <div class="footer">
   <nz-collapse [nzBordered]="false" *ngIf="post.comments && post.comments.length > 0">
     <nz-collapse-panel [nzHeader]="post.comments.length +' commentaire' + (post.comments.length > 1 ? 's' : '')">
-        <!-- TODO afficher le liste des posts avec post-component -->
-        <post-comment [comment]="post"></post-comment>
+        <!-- TODO afficher la liste des posts avec post-component -->
+        <div  *ngFor="let comment of post.comments">
+          <post-comment [comment]="comment"></post-comment>
+        </div>
     </nz-collapse-panel>
   </nz-collapse>
 

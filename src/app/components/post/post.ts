@@ -28,6 +28,6 @@ export class PostComponent {
 
     onComment(message: string) {
         // TODO envoyer le message
-
+        this.postService.comment(this.post,message)
     }
 }

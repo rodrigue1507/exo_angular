@@ -19,7 +19,9 @@ export class SocialFeedComponent implements OnInit {
 
     onSubmit(message: string) {
         //TODO utiliser le postSerice pour ajouter le message
-        this.postService.post(this.channelId,message)
+        this.postSocket.onNewChannel(()=>{
+            this.getNewPost()
+        });
     }
 
     ngOnInit() {
@@ -32,5 +34,8 @@ export class SocialFeedComponent implements OnInit {
                         this.items = items
                     });
             });
+    }
+    getNewPost(){
+        this.items.forEach(element =>{this.postService.post(this.channelId,element.message)});
     }
 }

@@ -2,7 +2,7 @@
   <add-channel></add-channel>
   <!-- TODO itérer sur les channels -->
     <div *ngFor="let item of channels" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-      <a class="nav-link " data-toggle="pill" role="tab" aria-controls="v-pills-home" routerLinkActive="active" [routerLink]="item.id"  >{{item.name}}</a>
+      <a class="nav-link " data-toggle="pill" role="tab" aria-controls="v-pills-home" routerLinkActive="active" [routerLink]="item.id" >{{item.name}}</a>
     </div>
 </nav>
 
